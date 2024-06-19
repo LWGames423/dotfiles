@@ -1,0 +1,82 @@
+{
+    "layer": "top",
+    "modules-left": ["custom/launcher","cpu","memory","custom/media","tray", "custom/updates"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["cava", "custom/pipewire", "clock","custom/power"],
+    "hyprland/window": {
+         "max-length": 50
+    },
+    "clock": {
+        "interval": 1,
+         "format": "{:%m.%d %H:%M.%S}"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }, 
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi"
+    },
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+                 "*": 5
+        }
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "cava": {
+                "framerate": 60,
+                "autosens": 1,
+                "bars": 18,
+                "lower_cutoff_freq": 50,
+                "higher_cutoff_freq": 10000,
+                "hide_on_silence": true,
+                "method": "pipewire",
+                "source": "auto",
+                "stereo": true,
+                "reverse": false,
+                "bar_delimiter": 0,
+                "monstercat": false,
+                "waves": false,
+                "noise_reduction": 0.77,
+                "input_delay": 2,
+                "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+                "actions": {
+                           "on-click-right": "mode"
+                           }
+    },
+    "wireplumber": {
+        "format": "{volume}%",
+        "format-muted": "",
+        "on-click": "pavucontrol"
+    },
+    "custom/pipewire": {
+        "tooltip": false,
+        "max-length": 6,
+        "signal": 8,
+        "restart-interval": 0,
+        "exec": "~/.config/waybar/scripts/pipewire.sh",
+        "on-click":  "playerctl play-pause"
+    },
+    "custom/power":{
+        "format":" ",
+        "on-click": "bash ~/.config/rofi/leave/leave.sh"
+    },
+    "custom/updates":{
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 15,
+        "on-click": "kitty -e pamac update && notify-send 'The system has been updated' "
+    }
+}
