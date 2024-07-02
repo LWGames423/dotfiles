@@ -1,0 +1,199 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\setlength{\parindent}{0pt}
+
+\title{\Huge{Physics Notes}\\wahoo}
+\author{\huge{Leo Wang}}
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\chapter{1D Kinematics}
+\section{Coordinate System in 1D}
+Coords in 1D:
+\begin{itemize}
+  \item Set origin
+  \item Set axis
+  \begin{itemize}
+    \item Set positive coordinate system
+  \end{itemize}
+  \item Unit vector
+  \begin{itemize}
+    \item You only need one because it only has one dimension
+  \end{itemize}
+\end{itemize}
+
+Every point in 1D space has a point $\ihat$ $\lthen$ point $p_1$ has a vector $\ihat_1$ and point $p_2$ has a vector $\ihat_2$
+
+$\ihat_1 = \ihat_2$ $\lthen$ $|\ihat| = 1$
+
+\section{Position Vector in 1D}
+
+$x(t)$ is the position function that changes according to time. 
+
+Position vector is $\vec{r}(t) = x(t)\ihat$
+
+$x(t)$ is the component of the potition vector
+
+$x(t)$ changes sign depending on location $\lthen$ $x(t)>0$ when the object is positive of the origin, $x(t)=0$ when the object is on the vector, and $x(t)<0$ when the object is negative of the origin
+
+Direction of the vector is determined by the sign of the component ($x(t)$) times the component ($\ihat$)
+
+\section{Displacement Vector in 1D}
+
+The position after time $\Delta t$ if the object has been moving at a constant velocity is $r(t + \Delta t) = x(t+\Delta t) \ihat$
+
+Displacement vector for $[t, t + \Delta t]$ is 
+\begin{gather*}
+\Delta \vec{r} \equiv \vec{r}(t+\Delta t) - \vec{r}(t) = (x(t + \Delta t) - x(t))\ihat\\
+\Delta \vec{r} = \Delta x \ihat
+\end{gather*}
+
+$\Delta x$ is the component of the displacement vector, where a $\Delta x > 0$ means a displacement in the positive x direction, a $\Delta x = 0$ meaning no net change in position, and a $\Delta x < 0$ meaning a change in position in the negative x direction
+
+\newpage
+\section{Avg. Velocity in 1D}
+Average velocity depends on the time interval
+
+Ex. for interval $[t,\Delta t]$: 
+\begin{gather*}
+  \vec{v}_{avg} \equiv \frac{\Delta \vec{r}}{\Delta t} = \frac{\Delta x}{\Delta t} \ihat
+\end{gather*}
+where $\frac{\Delta x}{\Delta t}$ is the component of velocity 
+
+\section{Instantaneous Velocity in 1D}
+How do we find velocity at specific time $t_1$?
+
+Consider avg. velocity over time interval $[t_1,t_{1+\Delta t}]$ $\lthen$ $\vec{v}_{avg} =$ slope of the line.
+
+As we shrink $\Delta t$, we find the slope changes. If we consider $\lim_{x\to 0} \frac{\Delta x}{\Delta t}$, we will get to the slope of the tangent line at time $t_1$
+
+Thus we have:
+\begin{gather*}
+  \vec{v}(t_1) = \lim_{\Delta t\to 0} \frac{\Delta x}{\Delta t} \ihat \\
+  = \lim_{\dlt t \to 0} (\frac{x(t_1 + \Delta t) - x_1 (t)}{\Delta t})\ihat
+\end{gather*}
+
+$\vec{v}(t_1)$ is the instantaneous at time $t=t_1$
+
+More generally, $\vec{v}(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} \ihat$ $\lthen$ $\vec{v}(t) = \frac{dx}{dt} \ihat$ 
+
+\newpage
+\chapter{1D Kinematics - Acceleration}
+\section{Intro to Acceleration}
+Acceleration is the change in velocity over time $\lthen$ $\frac{d\vel}{dt}$
+
+For an object in freefall, $\vec{F}_{grav} = m\acc$ where $\acc$ is the gravitational constant
+
+\nt{Freefall is where an object is under the influence of the gravitational force $\vec{F}_g$}
+
+\section{Acceleration in 1D}
+$\dlt \vel = (v (t + \dlt t) - v (t))\ihat$ on the interval $[t, \dlt t]$
+
+Now we find instantaneous acceleration:
+\begin{gather*}
+  \acc (t) = \lim_{\dlt t \to 0} \frac{\dlt \vel}{\dlt t} = \lim_{\dlt t \to 0} \frac{\dlt v}{\dlt t} \ihat
+\end{gather*}
+Visually, $\acc (t)$ is the slope of the tangent line of the plot of $\vel (t)$ vs $t$
+
+Componently, $\acc (t) = a_x(t) \ihat = \frac{dv_x}{dt} \ihat$
+
+\newpage
+\chapter{2D Kinematics}
+
+\section{Coordinate System and Position Vector in 2D}
+To represent 2D motion in vectors, one first needs to set up a coordinate system. For any arbitrary point $p_1$, there'll be unit vectors $\ihat_1$ and $\jhat_1$. 
+\nt{The Cartesian coordinate system is interesting in that no matter what point we're at, the unit vectors are all the same $\lthen$ we just have $\ihat$ and $\jhat$}
+
+Now we find the position vector, $\vec{r}(t)$, a vector from the origin to the position of the object. We can reprecent $\vec{r}_t$ as two vectors, $x(t)$ and $y(t)$. 
+
+Thus $\vec{r}(t) = x(t)\ihat + y(t)\jhat$
+
+\section{Instantaneous Velocity in 2D}
+
+To find velocity, we want to find $\lim_{\dlt t \to 0} \vec{r}(t)$
+
+Graphically, $\lim_{\dlt t \to 0} \vec{r}(t)$ is direcly tangent to the position at time $t$. 
+
+Given $\vec{r}(t) = x(t)\ihat + y(t)\jhat$, we can find velocity by:
+\begin{gather*}
+  \vel = \lim_{\dlt t \to 0} \frac{\dlt \vec{r}}{\dlt t} = (\limto \frac{\dlt x}{\dlt t} \ihat) + (\limto \frac{\dlt y}{\dlt t} \jhat) \\
+  \vel = \frac{d\vec{r}}{dt} = \frac{dx}{dt} \ihat + \frac{dy}{dt} \jhat \\
+  \vel = v_x \ihat + v_y \jhat
+\end{gather*}
+where $(v_x, v_y) = (\frac{dx}{dt}, \frac{dy}{dt})$
+
+\nt{The speed of the velocity is $v = |(v_x^2 + v_y^2)^{\frac{1}{2}}|$}
+
+We can find the direction of velocity as such:
+\begin{gather*}
+  \tan \theta = \dfrac{v_y}{v_x}\\
+  \theta = \arctan{\dfrac{v_y}{v_x}}
+\end{gather*}
+
+\section{Instantaneous Acceleration in 2D}
+
+$\acc (t) - \frac{d\vel}{dt} = \limto \frac{\dlt \vel}{\dlt t}$
+\begin{gather*}
+  \vel = v_x \ihat + v_y \jhat \lthen \acc = \frac{d\vel}{dt} = \frac{dv_x}{dt} \ihat + \frac{dv_y}{dt} \jhat\\
+  \acc = \frac{d^2x}{dt^2} \ihat + \frac{d^2y}{dt^2}\\
+  \acc = a_x \ihat + a_y \jhat\\
+  a_x = \frac{d^2x}{dt^2} = \frac{dv_x}{dt}, a_y = \frac{d^2y}{dt^2} = \frac{dv_y}{dt}
+\end{gather*}
+$a = |(a_x^2 + a_y^2)^\frac{1}{2}|$
+
+\section{Projectile Motion}
+Projectile motion is the motion of an object while under the influence of gravity. 
+
+Need to apply Newtons 2nd Law in order to analyze the kinematics.
+\\
+\\
+$\jhat$:
+\begin{tabular}{|c|c|}
+  \hline
+  $\vec{F}$ & $m \acc$\\
+  \hline
+  $-mg$ & $ma_y$\\
+  \hline
+\end{tabular}
+Applying Newtons 2nd Law, we can set $-mg = ma_y$ $\lthen$ $-g = a_y$
+\\
+\\
+$\ihat$: $0 = ma_x$ $\lthen$ $a_x = 0$ 
+
+Thus, we have:
+
+\begin{align}
+  &v_y (t) = v_{y0} - gt  \\
+  &y(t) = y_0 + v_{y0}t - \half g t^2 \notag\\
+  &v_x (t) = v_{x0} \\
+  &x(t) = x_0 + v_{x0} t \notag \\
+  \notag \\
+  &x_0 = 0 \lthen x = v_{x0} t\notag\\
+  &t = x/v_{x0}\notag\\
+  \notag \\
+  &y(x) = y_0 + \frac{v_{y0}x}{v_{x0}} - \half g \frac{x^2}{v_{x0}}
+\end{align} 
+
+\newpage
+
+\chapter{Newtons First and Second Laws}
+Newtons First Law tells us about the motion of isloated bodies - where the net force is 0. States that an isolated body moves in a straight line at a const velocity. 
+
+Ex: Isloated body at rest will remain at rest as long as its undisturbed. 
+
+
+
+\end{document}
+

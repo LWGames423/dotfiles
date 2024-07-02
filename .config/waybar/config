@@ -15,7 +15,7 @@
         "spacing": 10
     }, 
     "custom/launcher":{
-        "format": " ",
+        "format": " ",
         "on-click": "rofi -show drun",
         "on-click-right": "killall rofi"
     },
@@ -55,11 +55,6 @@
                            "on-click-right": "mode"
                            }
     },
-    "wireplumber": {
-        "format": "{volume}%",
-        "format-muted": "",
-        "on-click": "pavucontrol"
-    },
     "custom/pipewire": {
         "tooltip": false,
         "max-length": 6,
@@ -75,7 +70,7 @@
     "custom/updates":{
         "format": "{} Update(s)",
         "exec": "checkupdates | wc -l",
-        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]", 
         "interval": 15,
         "on-click": "kitty -e pamac update && notify-send 'The system has been updated' "
     }

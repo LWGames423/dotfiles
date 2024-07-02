@@ -169,7 +169,6 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
     color: @sky;
-	background-image: url('/home/leow/.config/waybar/img/osaka.png');
 	background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -187,7 +186,7 @@ window#waybar.hidden {
 	transition: none;
 	color: #161320;
 	background: @red;
-	background-image: url('/home/leow/.config/waybar/img/fumo.png');
+	background-image: url('/home/oel/.config/waybar/img/fumo.png');
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
