@@ -1,21 +1,42 @@
 {
     "layer": "top",
-    "modules-left": ["custom/launcher","cpu","memory","custom/media","tray", "custom/updates"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["cava", "custom/pipewire", "clock","custom/power"],
-    "hyprland/window": {
-         "max-length": 50
+    "position": "top",
+    "height": 32,
+    "spacing": 4,
+    "exclusive": true,
+    "gtk-layer-shell": true,
+    "passthrough": false,
+    "fixed-center": true,
+    "modules-left": ["custom/launcher","hyprland/workspaces","hyprland/window","custom/updates"],
+    "modules-center": ["custom/media"],
+    "modules-right": ["tray","cpu","memory","wireplumber", "clock","custom/sep","custom/power"],
+    "hyprland/window":{
+      "format":"{}",
+      "rewrite":{
+        "(.*) — Mozilla Firefox": "$1",
+        "(^)(nvim)(.*)": "$2",
+      },
+      "separate-outputs":true
+    },
+    "wireplumber":{
+      "format": "{icon} {volume}%",
+      "format-muted": "  muted",
+      "format-icons": {
+          "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "on-click-middle": "pamixer -t",
+      "on-click": "pavucontrol"
     },
     "clock": {
         "interval": 1,
          "format": "{:%m.%d %H:%M.%S}"
     },
     "tray": {
-        "icon-size": 21,
-        "spacing": 10
+      "show-passive-items": true,
+      "spacing": 10
     }, 
     "custom/launcher":{
-        "format": " ",
+        "format": "",
         "on-click": "rofi -show drun",
         "on-click-right": "killall rofi"
     },
@@ -55,16 +76,12 @@
                            "on-click-right": "mode"
                            }
     },
-    "custom/pipewire": {
-        "tooltip": false,
-        "max-length": 6,
-        "signal": 8,
-        "restart-interval": 0,
-        "exec": "~/.config/waybar/scripts/pipewire.sh",
-        "on-click":  "playerctl play-pause"
+    "custom/sep":{
+      "format":"|",
+      "tooltip":false,
     },
     "custom/power":{
-        "format":" ",
+        "format":"⏻  ",
         "on-click": "bash ~/.config/rofi/leave/leave.sh"
     },
     "custom/updates":{
@@ -72,6 +89,19 @@
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]", 
         "interval": 15,
-        "on-click": "kitty -e pamac update && notify-send 'The system has been updated' "
+        "on-click": "kitty -e yay && notify-send 'The system has been updated' "
+    },
+    "custom/media": {
+      "format": "{icon} {}",
+      "escape": true,
+      "return-type": "json",
+      "max-length": 40,
+      "on-click": "playerctl play-pause",
+      "on-click-right": "playerctl stop",
+      "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+      "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous",
+      "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
     }
+}
 }
