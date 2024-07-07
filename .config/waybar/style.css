@@ -59,7 +59,9 @@ window#waybar.hidden {
 #tray,
 #memory,
 #window,
-#custom-gpu {
+#custom-gpu,
+#custom-updates
+{
     min-height: 0;
     padding: 2px 10px;
     border-radius: 8px;
@@ -121,6 +123,10 @@ window#waybar.empty #window {
 #custom-media {
     color: #f2cdcd;
     transition: none;
+}
+
+#custom-updates {
+  color: #f5e0dc;
 }
 
 @keyframes blink {

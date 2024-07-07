@@ -123,3 +123,5 @@ fastfetch -c neofetch.jsonc
 
 eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/atomic.omp.json)"
 eval "$(zoxide init --cmd cd bash)"
+
+export PATH=$PATH:/home/oel/.spicetify

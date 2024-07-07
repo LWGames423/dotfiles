@@ -7,9 +7,9 @@
     "gtk-layer-shell": true,
     "passthrough": false,
     "fixed-center": true,
-    "modules-left": ["custom/launcher","hyprland/workspaces","hyprland/window","custom/updates"],
+    "modules-left": ["custom/launcher","hyprland/workspaces","hyprland/window"],
     "modules-center": ["custom/media"],
-    "modules-right": ["tray","cpu","memory","wireplumber", "clock","custom/sep","custom/power"],
+    "modules-right": ["tray","cpu","memory","custom/updates","wireplumber", "clock","custom/sep","custom/power"],
     "hyprland/window":{
       "format":"{}",
       "rewrite":{
