@@ -81,7 +81,7 @@
       "tooltip":false,
     },
     "custom/power":{
-        "format":"⏻  ",
+        "format":"⏻ ",
         "on-click": "bash ~/.config/rofi/leave/leave.sh"
     },
     "custom/updates":{
