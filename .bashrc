@@ -117,13 +117,9 @@ shopt -s histappend
 
 export PATH=$PATH:/home/leow/.spicetify
 
-eval "$(thefuck --alias)"
-
 fastfetch -c neofetch.jsonc
 
 eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/atomic.omp.json)"
 eval "$(zoxide init --cmd cd bash)"
 
 export PATH=$PATH:/home/oel/.spicetify
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
