@@ -123,3 +123,8 @@ eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/atomic.omp.json)"
 eval "$(zoxide init --cmd cd bash)"
 
 export PATH=$PATH:/home/oel/.spicetify
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH

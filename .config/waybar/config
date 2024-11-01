@@ -13,7 +13,7 @@
     "hyprland/window":{
       "format":"{}",
       "rewrite":{
-        "(.*) — Mozilla Firefox": "$1",
+        "(.*) — Zen Browser": "$1",
         "(^)(nvim)(.*)": "$2",
       },
       "separate-outputs":true
