@@ -9,11 +9,11 @@ configuration{
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: "   Apps ";
-    display-run: "   Run ";
-    display-window: " 﩯  window";
-    display-Network: " 󰤨  Network";
-    sidebar-mode: true;
+    display-drun: ">";
+    display-run: ">";
+    // display-drun: "   Apps ";
+    // display-run: "   Run ";
+    sidebar-mode: false;
 }
 
 @theme "catppuccin"
@@ -59,7 +59,7 @@ entry {
     margin: 20px 0px 0px 10px;
     text-color: @fg-col;
     background-color: @bg-col;
-    placeholder:"Search";
+    placeholder:"...";
 
 }
 
