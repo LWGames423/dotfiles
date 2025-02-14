@@ -60,7 +60,9 @@ window#waybar.hidden {
 #memory,
 #window,
 #custom-gpu,
-#custom-updates
+#custom-updates,
+#workspaces,
+#window
 {
     min-height: 0;
     padding: 2px 10px;

@@ -80,7 +80,6 @@ if ${use_color} ; then
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
-  alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
   alias sd='cd && cd $(find * -type d | fzf)'
 else
 	if [[ ${EUID} == 0 ]] ; then
@@ -128,3 +127,5 @@ export PATH=$PATH:/home/oel/.spicetify
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+[ -s "/home/oel/.jabba/jabba.sh" ] && source "/home/oel/.jabba/jabba.sh"
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
