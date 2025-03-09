@@ -7,11 +7,11 @@
     "gtk-layer-shell": true,
     "passthrough": false,
     "fixed-center": true,
-    "modules-left": ["hyprland/window"],
+    "modules-left": ["custom/launcher", "hyprland/window"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray","cpu","memory","custom/updates","wireplumber", "clock","custom/sep","custom/power"],
+    "modules-right": ["tray","cpu","memory","wireplumber", "clock","custom/sep","custom/power"],
     "hyprland/window":{
-      "format":"{id}",
+      "format":"{title}",
       "rewrite":{
         "(.*) — Zen Browser": "$1",
         "(^)(nvim)(.*)": "$2",
@@ -34,7 +34,7 @@
     "tray": {
       "show-passive-items": true,
       "spacing": 10
-    }, 
+    },
     "custom/launcher":{
         "format": "",
         "on-click": "rofi -show drun",
@@ -89,7 +89,7 @@
     "custom/updates":{
         "format": "{} Update(s)",
         "exec": "checkupdates | wc -l",
-        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]", 
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
         "interval": 15,
         "on-click": "kitty yay && notify-send 'The system has been updated' "
     },
