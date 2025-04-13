@@ -7,9 +7,18 @@
     "gtk-layer-shell": true,
     "passthrough": false,
     "fixed-center": true,
-    "modules-left": ["custom/launcher", "hyprland/window"],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["custom/waymedia"],
     "modules-right": ["tray","cpu","memory","wireplumber", "clock","custom/sep","custom/power"],
+    "custom/waymedia": {
+        "format": "{icon}{artist}{divider}{title}",
+        "exec": "~/.config/waybar/scripts/waymedia/waymedia",
+        "interval": 1,
+        "limit": 60,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
     "hyprland/window":{
       "format":"{title}",
       "rewrite":{
