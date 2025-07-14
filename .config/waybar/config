@@ -7,23 +7,27 @@
     "gtk-layer-shell": true,
     "passthrough": false,
     "fixed-center": true,
-    "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["custom/waymedia"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/updates"],
+    "modules-center": ["mpris"],
     "modules-right": ["tray","cpu","memory","wireplumber", "clock","custom/sep","custom/power"],
-    "custom/waymedia": {
-        "format": "{icon}{artist}{divider}{title}",
-        "exec": "~/.config/waybar/scripts/waymedia/waymedia",
-        "interval": 1,
-        "limit": 60,
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "max-length": 25,
+        "player-icons": {
+          "default": "󰎆 ",
+          "cmus": " ",
+          "mpv": "🎵",
+          "vlc": "🎬",
+          "spotify": " "
+        }
     },
     "hyprland/window":{
       "format":"{title}",
       "rewrite":{
-        "(.*) — Zen Browser": "$1",
+        "(.*) — Mozilla Firefox": "$1",
         "(^)(nvim)(.*)": "$2",
+        "^([^ ]+?) at [0-9a-f]{40}.*$": "$1",
+        "^.*/([^/ ]+) at [0-9a-f]{40} · ([^/ ]+/[^/ ]+).*": "$1 ($2)",
       },
       "separate-outputs":true
     },
@@ -38,7 +42,8 @@
     },
     "clock": {
         "interval": 1,
-         "format": "{:%m.%d %H:%M.%S}"
+        "format": "{:%m.%d %H:%M.%S}",
+        "tooltip":false,
     },
     "tray": {
       "show-passive-items": true,
@@ -59,33 +64,13 @@
     "cpu": {
         "interval": 15,
         "format": " {}%",
-        "max-length": 10
+        "max-length": 10,
+        "tooltip":false,
     },
     "memory": {
         "interval": 30,
         "format": " {}%",
         "max-length": 10
-    },
-    "cava": {
-                "framerate": 60,
-                "autosens": 1,
-                "bars": 18,
-                "lower_cutoff_freq": 50,
-                "higher_cutoff_freq": 10000,
-                "hide_on_silence": true,
-                "method": "pipewire",
-                "source": "auto",
-                "stereo": true,
-                "reverse": false,
-                "bar_delimiter": 0,
-                "monstercat": false,
-                "waves": false,
-                "noise_reduction": 0.77,
-                "input_delay": 2,
-                "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-                "actions": {
-                           "on-click-right": "mode"
-                           }
     },
     "custom/sep":{
       "format":"|",
@@ -93,7 +78,8 @@
     },
     "custom/power":{
         "format":"⏻ ",
-        "on-click": "bash ~/.config/rofi/leave/leave.sh"
+        "on-click": "bash ~/.config/rofi/leave/leave.sh",
+        "tooltip":false,
     },
     "custom/updates":{
         "format": "{} Update(s)",
@@ -102,17 +88,5 @@
         "interval": 15,
         "on-click": "kitty yay && notify-send 'The system has been updated' "
     },
-    "custom/media": {
-      "format": "{icon} {}",
-      "escape": true,
-      "return-type": "json",
-      "max-length": 40,
-      "on-click": "playerctl play-pause",
-      "on-click-right": "playerctl stop",
-      "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-      "on-scroll-up": "playerctl next",
-      "on-scroll-down": "playerctl previous",
-      "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-    }
 }
 }

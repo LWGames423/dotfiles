@@ -1,3 +1,5 @@
+@import "colors.css";
+
 * {
     min-height: 0;
     /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
@@ -30,86 +32,65 @@ window#waybar.hidden {
     min-height: 0;
     margin: 4px 4px;
     border-radius: 8px;
-    background-color: #181825;
-    color: #cdd6f4;
+    background-color: @surface_container_low;
+    color: @primary;
 }
 
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    color: #1e1e2e;
-    background-color: #cdd6f4;
+    background-color: @surface_container_high;
+}
+
+#workspaces button.focused {
+    color: @primary;
 }
 
 #workspaces button.active {
-    color: #1e1e2e;
-    background-color: #89b4fa;
+    color: @surface_container;
+    background-color: @primary;
 }
 
 #workspaces button.urgent {
-    background-color: #f38ba8;
+    background-color: @error;
+    color: @surface_container;
 }
 
 #clock,
 #wireplumber,
 #custom-launcher,
 #custom-power,
-#custom-media,
 #cpu,
 #tray,
 #memory,
 #window,
-#custom-gpu,
 #custom-updates,
 #workspaces,
-#window
-{
+#window,
+#mpris {
     min-height: 0;
     padding: 2px 10px;
     border-radius: 8px;
     margin: 4px 4px;
-    background-color: #181825;
+    background-color: @surface_container;
+    color: @primary;
 }
 
 window#waybar.empty #window {
     background-color: transparent;
 }
 
+#tray,
 #cpu {
-    color: #94e2d5;
     margin-left: 0;
     margin-right: 0;
 }
-
-#custom-gpu {
-    color: #94e2d5;
-    margin-left: 0;
-    margin-right: 0;
-}
-
 #memory {
     margin-left: 0;
-    color: #cba6f7;
-}
-
-#clock {
-    color: #74c7ec;
-}
-
-#clock.simpleclock {
-    color: #89b4fa;
-}
-
-#window {
-    color: #a6e3a1;
-}
-
-#wireplumber {
-    color: #b4befe;
 }
 
 #wireplumber.muted {
-    color: #a6adc8;
+    color: @on_primary;
 }
 
 #custom-launcher {
@@ -117,18 +98,9 @@ window#waybar.empty #window {
 }
 
 #custom-power {
-    color: #f38ba8;
+    color: @secondary;
     padding-right: 5px;
     font-size: 14px;
-}
-
-#custom-media {
-    color: #f2cdcd;
-    transition: none;
-}
-
-#custom-updates {
-  color: #f5e0dc;
 }
 
 @keyframes blink {
