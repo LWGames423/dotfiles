@@ -9,10 +9,10 @@ done
 
 WALLPAPER=${images[0]}   # choose the first monitor’s wallpaper
 
-# wal -i $WALLPAPER -e -n -s -t
+wal -i $WALLPAPER -e -n -s -t
 
 matugen image $WALLPAPER
 
-# ln -sf ~/.cache/wal/colors-kitty.conf ~/.config/kitty/16-colors.conf
+ln -sf ~/.cache/wal/colors-kitty.conf ~/.config/kitty/16-colors.conf
 
 # ~/.config/matugen/papirus-folders/change-icons.sh

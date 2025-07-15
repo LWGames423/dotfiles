@@ -78,7 +78,8 @@
     },
     "custom/power":{
         "format":"⏻ ",
-        "on-click": "bash ~/.config/rofi/leave/leave.sh",
+        "on-click": "bash ~/.config/rofi/scripts/powermenu.sh",
+        "on-click-right": "hyprlock",
         "tooltip":false,
     },
     "custom/updates":{

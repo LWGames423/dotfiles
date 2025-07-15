@@ -6,19 +6,19 @@
  https://github.com/lassekongo83/adw-colors/blob/main/HOWTO.md
 */
 
-@define-color window_bg_color #111318;
-@define-color window_fg_color #e1e2e9;
-@define-color view_bg_color #111318;
+@define-color window_bg_color #191114;
+@define-color window_fg_color #eedfe2;
+@define-color view_bg_color #191114;
 @define-color view_fg_color @window_fg_color;
-@define-color accent_bg_color #a6c8ff;
-@define-color accent_fg_color #001c3a;
+@define-color accent_bg_color #ffb0ce;
+@define-color accent_fg_color #390721;
 @define-color accent_color @accent_bg_color;
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_border_color @window_bg_color;
 @define-color headerbar_shade_color @window_bg_color;
-@define-color card_bg_color #111318;
+@define-color card_bg_color #191114;
 @define-color card_fg_color @window_fg_color;
 @define-color card_shade_color rgba(0, 0, 0, 0.07);
 @define-color popover_bg_color @window_bg_color;
@@ -36,15 +36,15 @@
 @define-color secondary_sidebar_border_color @window_bg_color;
 
 
-@define-color warning_bg_color #553f5d;
-@define-color warning_fg_color #f7d8ff;
-@define-color warning_color #dabde2;
+@define-color warning_bg_color #633e22;
+@define-color warning_fg_color #ffdcc5;
+@define-color warning_color #f1bc96;
 @define-color error_bg_color #93000a;
 @define-color error_fg_color #ffdad6;
 @define-color error_color #ffb4ab;
-@define-color success_bg_color #3d4758;
-@define-color success_fg_color #d8e3f8;
-@define-color success_color #bcc7dc;
+@define-color success_bg_color #5a3f49;
+@define-color success_fg_color #ffd9e5;
+@define-color success_color #e1bdc9;
 @define-color destructive_bg_color #93000a;
 @define-color destructive_fg_color #ffdad6;
 @define-color destructive_color #ffb4ab;

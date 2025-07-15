@@ -116,7 +116,7 @@ shopt -s histappend
 
 export PATH=$PATH:/home/leow/.spicetify
 
-fastfetch -c neofetch.jsonc
+fastfetch
 
 eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/atomic.omp.json)"
 eval "$(zoxide init --cmd cd bash)"
