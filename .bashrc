@@ -127,5 +127,17 @@ export PATH=$PATH:/home/oel/.spicetify
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export ROCM_PATH=/opt/rocm
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
+export LD_LIBRARY_PATH=/opt/rocm/lib:$LD_LIBRARY_PATH
 [ -s "/home/oel/.jabba/jabba.sh" ] && source "/home/oel/.jabba/jabba.sh"
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+export PATH=$PATH:/opt/rocm/bin
+
+. "$HOME/.local/share/../bin/env"
